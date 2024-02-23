@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:quiz_app/quiz_start.dart";
 
 class ContainerHome extends StatelessWidget{
   const ContainerHome({super.key});
@@ -15,19 +16,7 @@ class ContainerHome extends StatelessWidget{
           end: AlignmentDirectional.bottomEnd
         )
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [                
-            Image.asset("assets/images/quiz-logo.png"),
-            const Center(
-              child : Text(
-                "Learn Flutter the Fun Way!", 
-                style: TextStyle(fontSize: 24, color: Colors.white),
-            ),
-            
-          ),
-        ],
-      )
+      child: QuizStart(),
     );
   }
 }
