@@ -15,10 +15,10 @@ void main(){
               end: AlignmentDirectional.bottomEnd
             )
           ),
-          child: const Column(
+          child: Column(
             children: [
-                
-                Center(
+                Image.asset("assets/images/quiz-logo.png"),
+                const Center(
                   child : Text(
                     "Learn Flutter the Fun Way!", 
                     style: TextStyle(fontSize: 24, color: Colors.white),
