@@ -14,7 +14,7 @@ class ContainerHome extends StatelessWidget{
             Color.fromARGB(255, 144, 24, 148),
           ],
           end: AlignmentDirectional.bottomEnd
-        )
+        ),
       ),
       child: QuizStart(),
     );
