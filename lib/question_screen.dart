@@ -18,7 +18,6 @@ class _QuestionScreenState extends State<QuestionScreen>{
         Center(
             child: Text(
               "This is question Screen",
-              
             ),
           ),
       ],
