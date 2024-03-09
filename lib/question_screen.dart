@@ -32,7 +32,7 @@ class _QuestionScreenState extends State<QuestionScreen>{
             ),
             const SizedBox(height: 30),
             // Use Spreading to Spread list values [Because map return list and we need widget in Children]
-            ...currentQuestion.answers.map((answer){
+            ...currentQuestion.getShuffledAnswers().map((answer){
               return AnswerButton(
                 answerText: answer, 
                 onTap: (){}

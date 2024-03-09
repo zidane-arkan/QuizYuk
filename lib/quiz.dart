@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:quiz_app/start_screen.dart";
-import "package:quiz_app/start_screen.dart";
 import "package:quiz_app/question_screen.dart";
 
 // Deep Dive: Flutter's (Stateful) Widget Lifecycle
