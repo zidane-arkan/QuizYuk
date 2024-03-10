@@ -44,13 +44,12 @@ class _StartScreen extends State<StartScreen>{
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               textStyle: const TextStyle(
-                color: Colors.white,
                 fontSize: 18,
               ),
             ),
             label: const Text("Start Quiz"),
             icon: const Icon(
-              Icons.arrow_right_alt,
+              Icons.arrow_right_alt_rounded,
               color: Colors.white
             ),
           ),
