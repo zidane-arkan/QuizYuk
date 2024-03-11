@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:quiz_app/start_screen.dart";
 import "package:quiz_app/question_screen.dart";
+import 'package:quiz_app/data/questions.dart';
 
 // Deep Dive: Flutter's (Stateful) Widget Lifecycle
   // Every Flutter Widget has a built-in lifecycle: A collection of methods that are automatically executed by Flutter (at certain points of time).
@@ -41,6 +42,12 @@ class _Quiz extends State<Quiz>{
 
   void chooseAnwer(String answer){
     selectedAnswers.add(answer);
+    if (selectedAnswers.length == questions.length){
+      setState(() {
+        activeScreen = 'start-screen';
+      });
+    }
+    // print(selectedAnswers);
   }
   @override
   Widget build(BuildContext context) {

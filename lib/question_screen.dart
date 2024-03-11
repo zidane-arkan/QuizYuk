@@ -16,13 +16,13 @@ class QuestionScreen extends StatefulWidget{
 
 class _QuestionScreenState extends State<QuestionScreen>{
   var activeQuestion = 0;
-  void updateQuestion(){
-    widget.onSelectAnswer('...');
-    setState((){
-      if (activeQuestion < questions.length-1){
-        activeQuestion++;
-      }
-    });
+  void updateQuestion(String selectedAnswer){
+    if (activeQuestion < questions.length-1){
+      widget.onSelectAnswer(selectedAnswer);
+      setState((){
+          activeQuestion++;
+      });
+    }
   }
   @override
   Widget build(context){
@@ -53,7 +53,9 @@ class _QuestionScreenState extends State<QuestionScreen>{
             ...currentQuestion.getShuffledAnswers().map((answer){
               return AnswerButton(
                 answerText: answer, 
-                onTap: updateQuestion,
+                onTap: () {
+                  updateQuestion(answer);
+                },
               );
             }),
           ],
