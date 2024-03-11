@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:quiz_app/results_screen.dart";
 import "package:quiz_app/start_screen.dart";
 import "package:quiz_app/question_screen.dart";
 import 'package:quiz_app/data/questions.dart';
@@ -45,7 +46,7 @@ class _Quiz extends State<Quiz>{
     if (selectedAnswers.length == questions.length){
       setState(() {
         selectedAnswers = [];
-        activeScreen = 'start-screen';
+        activeScreen = 'results-screen';
       });
     }
     // print(selectedAnswers);
@@ -53,8 +54,15 @@ class _Quiz extends State<Quiz>{
   @override
   Widget build(BuildContext context) {
     Widget screenWidget = StartScreen(switchScreen);
-    activeScreen == "question-screen" ? screenWidget = QuestionScreen(onSelectAnswer: chooseAnwer,) 
-    : screenWidget = StartScreen(switchScreen);
+    // activeScreen == "question-screen" ? screenWidget = QuestionScreen(onSelectAnswer: chooseAnwer,) 
+    // : screenWidget = StartScreen(switchScreen);
+    if(activeScreen == 'question-screen'){
+      QuestionScreen(onSelectAnswer: chooseAnwer,);
+    }
+
+    if(activeScreen == 'question-screen'){
+      const ResultsScreen();
+    }
     
     return MaterialApp(
       home: Scaffold(
