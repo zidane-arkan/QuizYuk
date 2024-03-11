@@ -17,12 +17,10 @@ class QuestionScreen extends StatefulWidget{
 class _QuestionScreenState extends State<QuestionScreen>{
   var activeQuestion = 0;
   void updateQuestion(String selectedAnswer){
-    if (activeQuestion < questions.length-1){
-      widget.onSelectAnswer(selectedAnswer);
-      setState((){
-          activeQuestion++;
-      });
-    }
+    widget.onSelectAnswer(selectedAnswer);
+    setState((){
+        activeQuestion++;
+    });
   }
   @override
   Widget build(context){
@@ -42,7 +40,7 @@ class _QuestionScreenState extends State<QuestionScreen>{
               //   fontSize: 18,
               // ),
               style: GoogleFonts.nunito(
-                color: const Color.fromARGB(255, 130, 100, 211),
+                color: const Color.fromARGB(255, 167, 137, 252),
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+
 class ResultsScreen extends StatelessWidget{
-  const ResultsScreen({super.key});
+  const ResultsScreen({super.key, required this.answersList});
+  final List<String> answersList;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,10 +18,13 @@ class ResultsScreen extends StatelessWidget{
             const SizedBox(height: 30,),
             // Scrollable(viewportBuilder: viewportBuilder),
             const Text(' List of answers and questions'),
+            ...answersList.map((e){
+              return Text(e, style: TextStyle(color: Colors.white),);
+            }),
             const SizedBox(height: 30,),
             TextButton(
               onPressed: () {}, 
-              child: const Text('Restart Quiz'),  
+              child: const Text("s"),  
             ),
           ],
         ),
