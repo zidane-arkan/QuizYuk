@@ -26,7 +26,7 @@ class Quiz extends StatefulWidget{
 
 class _Quiz extends State<Quiz>{
   // You can edit final variable : add new value
-  final List<String> selectedAnswers = [];
+  List<String> selectedAnswers = [];
   var activeScreen = 'start-screen';
   // Widget? activeScreen;
   // @override
@@ -44,6 +44,7 @@ class _Quiz extends State<Quiz>{
     selectedAnswers.add(answer);
     if (selectedAnswers.length == questions.length){
       setState(() {
+        selectedAnswers = [];
         activeScreen = 'start-screen';
       });
     }
