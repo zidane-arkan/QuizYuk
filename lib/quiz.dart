@@ -48,7 +48,7 @@ class _Quiz extends State<Quiz>{
         activeScreen = 'results-screen';
       });
     }
-    print(selectedAnswers);
+    // print(selectedAnswers);
   }
 
   void resetQuiz(String answer){
