@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
-
+import 'package:quiz_app/data/questions.dart';
 
 class ResultsScreen extends StatelessWidget{
   const ResultsScreen({super.key, required this.answersList});
   final List<String> answersList;
+  List<Map<String, Object>> getSummaryData(){
+    final List<Map<String, Object>> summary = [];
+    for (var i =0 ; i < summary.length; i++){
+      summary.add({
+        "question_index" : i,
+        "question": questions[i].text,
+        "correct_answer": questions[i].answers[0]
+      });
+    }
+    return summary;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -19,7 +31,7 @@ class ResultsScreen extends StatelessWidget{
             // Scrollable(viewportBuilder: viewportBuilder),
             const Text(' List of answers and questions'),
             ...answersList.map((e){
-              return Text(e, style: TextStyle(color: Colors.white),);
+              return Text(e, style: const TextStyle(color: Colors.white),);
             }),
             const SizedBox(height: 30,),
             TextButton(
