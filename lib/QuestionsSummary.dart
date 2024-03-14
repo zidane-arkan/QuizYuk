@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class QuestionsSummary extends StatelessWidget{
-  const QuestionsSummary({super.key});
+  const QuestionsSummary({super.key, required this.summaryAnswers});
+  final List<Map<String, Object>> summaryAnswers;
+
   @override
   Widget build(context) {
-    return Column(
-
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
     );
   }
 }
