@@ -11,7 +11,6 @@ class QuestionsSummary extends StatelessWidget{
       height: 500,
       child: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children : summaryAnswers.map((data) {
             return Row(
@@ -28,15 +27,11 @@ class QuestionsSummary extends StatelessWidget{
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const Padding( 
-                  padding: EdgeInsets.only(
-                    left: 10,
-                  ),
-                ),
                 // Restrict width of columns to match with width of row
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children : [
                       const SizedBox(height: 16,),
                       Text(
