@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_summary.dart';
 class ResultsScreen extends StatelessWidget{
-  const ResultsScreen({super.key, required this.chosenAnswers});
+  const ResultsScreen({super.key, required this.chosenAnswers, required this.resetQuiz});
+  final void Function() resetQuiz;
   final List<String> chosenAnswers;
   List<Map<String, Object>> getSummaryData(){
     final List<Map<String, Object>> summary = [];
@@ -46,13 +47,13 @@ class ResultsScreen extends StatelessWidget{
             //   return Text(e, style: const TextStyle(color: Colors.white),);
             // }),
             QuestionsSummary(summaryAnswers: summaryData,),
-            const SizedBox(height: 30,),
+            // const SizedBox(height: 0,),
             TextButton.icon(
               icon: const Icon(
                 Icons.change_circle_sharp,
                 color: Colors.white,
               ),
-              onPressed: () {}, 
+              onPressed: resetQuiz, 
               label: const Text(
                 "Restart Quiz",
                 style: TextStyle(

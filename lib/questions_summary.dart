@@ -18,11 +18,11 @@ class QuestionsSummary extends StatelessWidget{
               children: [
                 const SizedBox(height: 10),
                 Container(
-                  width: 50,
-                  padding : const EdgeInsets.all(7),
+                  width: 30,
+                  height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(360),
-                    border: Border.all(color:const Color.fromARGB(255, 231, 43, 231)),
+                    color: Colors.purple,
                   ),
                   child: Text(
                     ((data["question_index"] as int) + 1).toString(),
@@ -39,7 +39,7 @@ class QuestionsSummary extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children : [
-                      const SizedBox(height: 10,),
+                      // const SizedBox(height: 10,),
                       Text(
                         data["question"] as String,
                         style: GoogleFonts.nunito(
@@ -59,7 +59,7 @@ class QuestionsSummary extends StatelessWidget{
                         ),
                         
                       ),
-                      const SizedBox(height: 5,),
+                      // const SizedBox(height: 5,),
                       Text(
                         data["user_answer"] as String,
                         textAlign: TextAlign.start,
@@ -72,7 +72,6 @@ class QuestionsSummary extends StatelessWidget{
                     ],
                   ),
                 ),
-                const SizedBox(height: 10,)
             ],);
           }).toList(),
         ),

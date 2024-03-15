@@ -51,11 +51,16 @@ class _Quiz extends State<Quiz>{
     // print(selectedAnswers);
   }
 
-  void resetQuiz(String answer){
-    selectedAnswers.add(answer);
+  void resetQuiz(){
     setState(() {
       selectedAnswers = [];
+      activeScreen = 'start-screen';
     });
+  // void selectAnswers(String answer){
+  //   selectedAnswers.add(answer);
+  //   // print(selectedAnswers);
+  // }
+
     // print(selectedAnswers);
   }
   @override
@@ -63,12 +68,17 @@ class _Quiz extends State<Quiz>{
     Widget screenWidget = StartScreen(switchScreen);
     // activeScreen == "question-screen" ? screenWidget = QuestionScreen(onSelectAnswer: chooseAnwer,) 
     // : screenWidget = StartScreen(switchScreen);
+    if(activeScreen == 'start-screen'){
+      screenWidget = StartScreen(switchScreen);
+    }
+
+
     if(activeScreen == 'question-screen'){
       screenWidget = QuestionScreen(onSelectAnswer: chooseAnwer,);
     }
 
     if(activeScreen == 'results-screen'){
-      screenWidget = ResultsScreen(chosenAnswers: selectedAnswers);
+      screenWidget = ResultsScreen(chosenAnswers: selectedAnswers, resetQuiz: resetQuiz);
     }
 
     return MaterialApp(
