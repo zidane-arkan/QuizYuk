@@ -33,8 +33,10 @@ class ResultsScreen extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!'),
-            const SizedBox(height: 30,),
+            Text(
+              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!'
+            ),
+            const SizedBox(height: 10,),
             // const Text(' List of answers and questions'),
             // ...chosenAnswers.map((e){
             //   return Text(e, style: const TextStyle(color: Colors.white),);
