@@ -14,20 +14,24 @@ class QuestionsSummary extends StatelessWidget{
             Text(
               ((data["question_index"] as int) + 1).toString(),
             ),
-            Column(
-              children : [
-                Text(
-                  data["question"] as String,
-                  style: GoogleFonts.nunito(
-                    fontSize: 10,
-                    color: Colors.black26
+            // Restrict width of columns to match with width of row
+            Expanded(
+              child: Column(
+                children : [
+                  const SizedBox(height: 16,),
+                  Text(
+                    data["question"] as String,
+                    style: GoogleFonts.nunito(
+                      fontSize: 12,
+                      color: Colors.black
+                    ),
                   ),
-                ),
-                const SizedBox(height: 16,),
-                Text(data["correct_answer"] as String),
-                const SizedBox(height: 5,),
-                Text(data["user_answer"] as String),
-              ],
+                  const SizedBox(height: 10,),
+                  Text(data["correct_answer"] as String),
+                  const SizedBox(height: 5,),
+                  Text(data["user_answer"] as String),
+                ],
+              ),
             ),
           ],);
       }).toList(),
