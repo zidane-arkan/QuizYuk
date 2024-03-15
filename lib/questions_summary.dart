@@ -10,17 +10,16 @@ class QuestionsSummary extends StatelessWidget{
     return Column(
       // mainAxisAlignment: MainAxisAlignment.center,
       children : summaryAnswers.map((data) {
-          var questionNumber = (data["question_index"] as int) + 1;
           return Row(children: [
             Text(
-              questionNumber as String,
+              ((data["question_index"] as int) + 1).toString(),
             ),
             Column(
               children : [
                 Text(
                   data["question"] as String,
                   style: GoogleFonts.nunito(
-                    fontSize: 28,
+                    fontSize: 10,
                     color: Colors.black26
                   ),
                 ),

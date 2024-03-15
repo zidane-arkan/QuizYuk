@@ -34,6 +34,7 @@ class ResultsScreen extends StatelessWidget{
             // ...chosenAnswers.map((e){
             //   return Text(e, style: const TextStyle(color: Colors.white),);
             // }),
+            QuestionsSummary(summaryAnswers: getSummaryData(),),
             const SizedBox(height: 30,),
             TextButton(
               onPressed: () {}, 
