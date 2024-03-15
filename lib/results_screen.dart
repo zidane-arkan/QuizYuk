@@ -31,15 +31,14 @@ class ResultsScreen extends StatelessWidget{
         margin: const EdgeInsets.all((40)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(
-              child: Text(
-                'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
+            Text(
+              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
               ),
             ),
             const SizedBox(height: 10,),
@@ -51,11 +50,16 @@ class ResultsScreen extends StatelessWidget{
             const SizedBox(height: 30,),
             TextButton.icon(
               icon: const Icon(
-                Icons.restart_alt_rounded,
+                Icons.change_circle_sharp,
                 color: Colors.white,
               ),
               onPressed: () {}, 
-              label: const Text("Restart Quiz"),  
+              label: const Text(
+                "Restart Quiz",
+                style: TextStyle(
+                  color: Colors.white
+                ),
+              ),  
             ),
           ],
         ),
