@@ -33,8 +33,14 @@ class ResultsScreen extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!'
+            Center(
+              child: Text(
+                'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
             ),
             const SizedBox(height: 10,),
             // const Text(' List of answers and questions'),
@@ -43,9 +49,13 @@ class ResultsScreen extends StatelessWidget{
             // }),
             QuestionsSummary(summaryAnswers: summaryData,),
             const SizedBox(height: 30,),
-            TextButton(
+            TextButton.icon(
+              icon: const Icon(
+                Icons.restart_alt_rounded,
+                color: Colors.white,
+              ),
               onPressed: () {}, 
-              child: const Text("s"),  
+              label: const Text("Restart Quiz"),  
             ),
           ],
         ),

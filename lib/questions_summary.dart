@@ -36,6 +36,7 @@ class QuestionsSummary extends StatelessWidget{
                     ],
                   ),
                 ),
+                const SizedBox(height: 10,)
             ],);
           }).toList(),
         ),
