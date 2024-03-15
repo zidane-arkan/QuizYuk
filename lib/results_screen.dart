@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
-
+import 'package:quiz_app/questions_summary.dart';
 class ResultsScreen extends StatelessWidget{
   const ResultsScreen({super.key, required this.chosenAnswers});
   final List<String> chosenAnswers;
@@ -30,11 +30,10 @@ class ResultsScreen extends StatelessWidget{
           children: [
             const Text('You answered X out of Y questions correctly!'),
             const SizedBox(height: 30,),
-            // Scrollable(viewportBuilder: viewportBuilder),
-            const Text(' List of answers and questions'),
-            ...chosenAnswers.map((e){
-              return Text(e, style: const TextStyle(color: Colors.white),);
-            }),
+            // const Text(' List of answers and questions'),
+            // ...chosenAnswers.map((e){
+            //   return Text(e, style: const TextStyle(color: Colors.white),);
+            // }),
             const SizedBox(height: 30,),
             TextButton(
               onPressed: () {}, 
