@@ -16,9 +16,10 @@ class QuestionsSummary extends StatelessWidget{
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const SizedBox(height: 10),
                 Container(
                   width: 50,
-                  padding : const EdgeInsets.all(5),
+                  padding : const EdgeInsets.all(7),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(360),
                     border: Border.all(color:const Color.fromARGB(255, 231, 43, 231)),
@@ -38,7 +39,7 @@ class QuestionsSummary extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children : [
-                      // const SizedBox(height: 16,),
+                      const SizedBox(height: 10,),
                       Text(
                         data["question"] as String,
                         style: GoogleFonts.nunito(
