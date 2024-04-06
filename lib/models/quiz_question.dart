@@ -4,7 +4,7 @@ class QuizQuestion{
   final String text;
   final List<String> answers;
   // Chaining = Calling method as the results of calling another methods
-  List<String> getShuffledAnswers(){
+  List<String> get shuffledAnswers{
     final shuffledList =  List.of(answers);
     shuffledList.shuffle();
     return shuffledList;

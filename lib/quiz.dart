@@ -25,9 +25,10 @@ class Quiz extends StatefulWidget{
   }
 }
 
+// Only belong to quiz class
 class _Quiz extends State<Quiz>{
   // You can edit final variable : add new value
-  List<String> selectedAnswers = [];
+  List<String> _selectedAnswers = [];
   var activeScreen = 'start-screen';
   // Widget? activeScreen;
   // @override
@@ -42,26 +43,26 @@ class _Quiz extends State<Quiz>{
   }
 
   void chooseAnwer(String answer){
-    selectedAnswers.add(answer);
-    if (selectedAnswers.length == questions.length){
+    _selectedAnswers.add(answer);
+    if (_selectedAnswers.length == questions.length){
       setState(() {
         activeScreen = 'results-screen';
       });
     }
-    // print(selectedAnswers);
+    // print(_selectedAnswers);
   }
 
   void resetQuiz(){
     setState(() {
-      selectedAnswers = [];
+      _selectedAnswers = [];
       activeScreen = 'start-screen';
     });
   // void selectAnswers(String answer){
-  //   selectedAnswers.add(answer);
-  //   // print(selectedAnswers);
+  //   _selectedAnswers.add(answer);
+  //   // print(_selectedAnswers);
   // }
 
-    // print(selectedAnswers);
+    // print(_selectedAnswers);
   }
   @override
   Widget build(BuildContext context) {
@@ -78,7 +79,7 @@ class _Quiz extends State<Quiz>{
     }
 
     if(activeScreen == 'results-screen'){
-      screenWidget = ResultsScreen(chosenAnswers: selectedAnswers, resetQuiz: resetQuiz);
+      screenWidget = ResultsScreen(chosenAnswers: _selectedAnswers, resetQuiz: resetQuiz);
     }
 
     return MaterialApp(

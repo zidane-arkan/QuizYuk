@@ -24,6 +24,7 @@ class QuestionsSummary extends StatelessWidget{
                     borderRadius: BorderRadius.circular(360),
                     color: Colors.purple,
                   ),
+                  alignment: Alignment.center,
                   child: Text(
                     ((data["question_index"] as int) + 1).toString(),
                     textAlign: TextAlign.center,

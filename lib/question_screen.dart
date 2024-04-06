@@ -40,7 +40,7 @@ class _QuestionScreenState extends State<QuestionScreen>{
               //   fontSize: 18,
               // ),
               style: GoogleFonts.nunito(
-                color: const Color.fromARGB(255, 167, 137, 252),
+                color: const Color.fromARGB(255, 206, 191, 247),
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -48,7 +48,7 @@ class _QuestionScreenState extends State<QuestionScreen>{
             ),
             const SizedBox(height: 30),
             // Use Spreading to Spread list values [Because map return list and we need widget in Children]
-            ...currentQuestion.getShuffledAnswers().map((answer){
+            ...currentQuestion.shuffledAnswers.map((answer){
               return AnswerButton(
                 answerText: answer, 
                 onTap: () {

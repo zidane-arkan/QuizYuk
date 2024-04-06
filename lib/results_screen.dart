@@ -5,7 +5,9 @@ class ResultsScreen extends StatelessWidget{
   const ResultsScreen({super.key, required this.chosenAnswers, required this.resetQuiz});
   final void Function() resetQuiz;
   final List<String> chosenAnswers;
-  List<Map<String, Object>> getSummaryData(){
+
+  // Use getter because the method only transform data that stored in another class
+  List<Map<String, Object>> get summaryData{
     final List<Map<String, Object>> summary = [];
     for (var i =0 ; i < chosenAnswers.length; i++){
       summary.add({
@@ -20,7 +22,6 @@ class ResultsScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {  
-    List<Map<String, Object>> summaryData = getSummaryData();
     final int numTotalQuestions = questions.length ;
     final numCorrectQuestions = summaryData.where((answers) {
       return answers["correct_answer"] == answers["user_answer"];
@@ -59,6 +60,7 @@ class ResultsScreen extends StatelessWidget{
                 style: TextStyle(
                   color: Colors.white
                 ),
+                textAlign: TextAlign.center,
               ),  
             ),
           ],

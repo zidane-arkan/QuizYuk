@@ -33,7 +33,7 @@ class _StartScreen extends State<StartScreen>{
             const SizedBox(height: 50),
             Center(
               child : Text(
-                "Learn Flutter the Fun Way!", 
+                "Let's Learn Flutter the Fun Way!", 
                 style: GoogleFonts.lato(fontSize: 24, color: Colors.white),
             ),
           ),
